@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// delevop list page
+Route::get('/list', function () {
+    return view('list');
+});
