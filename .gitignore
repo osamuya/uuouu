@@ -11,3 +11,5 @@ gate/Homestead.json
 gate/Homestead.yaml
 gate/.env
 gate/storage/framework/views/*
+#me
+.para/
