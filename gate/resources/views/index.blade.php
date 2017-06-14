@@ -49,36 +49,41 @@
     <div class="signup formarea">
         <form action="" method="">
             <div class="formarea__input">
-                <label class="formarea__input__label">User name: </label>
-                <input type="text" name="" id=""  class="formarea__input__field">
+                <label class="formarea__input__label">ユーザー名: </label>
+                <input type="text" name="" id=""  class="formarea__input__field" placeholder="User name">
+                <div class="formarea__err">*ユーザー名を入力してください。</div>
             </div>
             <div class="formarea__input">
-                <label class="formarea__input__label">Email: </label>
-                <input type="text" name="" id="" class="formarea__input__field">
+                <label class="formarea__input__label">Eメール: </label>
+                <input type="text" name="" id="" class="formarea__input__field" placeholder="Email">
+                <div class="formarea__err">*Emailを入力してください。</div>
             </div>
             <div class="formarea__input">
-                <label class="formarea__input__label">Password: </label>
+                <label class="formarea__input__label">パスワード: </label>
                 <input type="text" name="" id="" class="formarea__input__field--small">
-                <input type="submit" name="" id="" class="formarea__input__submit" value="regist">
+                <input type="submit" name="" id="" class="formarea__input__submit--regist" value="regist">
+                <div class="formarea__err">*ユーザー名を入力してください。</div>
             </div>
         </form>
     </div>
     <div class="signin formarea">
         <form action="" method="">
             <div class="formarea__input">
-                <label class="formarea__input__label">Email: </label>
-                <input type="text" name="" id="" class="formarea__input__field">
+                <label class="formarea__input__label">ユーザー名: </label>
+                <input type="text" name="" id="" class="formarea__input__field" placeholder="User name or Email">
+                <div class="formarea__err">*ユーザー名またはEmailを入力してください。</div>
             </div>
             <div class="formarea__input">
-                <label class="formarea__input__label">Password: </label>
+                <label class="formarea__input__label">パスワード: </label>
                 <input type="text" name="" id="" class="formarea__input__field--small">
-                <input type="submit" name="" id="" class="formarea__input__submit" value="Sign in">
+                <input type="submit" name="" id="" class="formarea__input__submit--signin" value="Sign in">
+                <div class="formarea__err">*パスワードを入力してください。</div>
             </div>
         </form>
     </div>
 </div>
 <footer class="footer">
-    <p class="footer__copy">Copyright (C) 2017 Saba note. All rights reserved.</p>
+    <p class="footer__copy">Copyright (C) 2017 omnioo. All rights reserved.</p>
 </footer>
 
 

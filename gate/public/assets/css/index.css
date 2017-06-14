@@ -372,23 +372,72 @@ blockquote:before {
   text-align: center;
   background: #fefefe;
   margin: 50px 0; }
+  @media only screen and (max-width: 750px) {
+    .formarea {
+      margin: 5%;
+      text-align: left; } }
+  .formarea__err {
+    margin: 9px;
+    padding-left: 10px;
+    font-size: 13px;
+    color: #c9171e;
+    margin-left: 110px; }
+    @media only screen and (max-width: 750px) {
+      .formarea__err {
+        margin: 2%;
+        font-size: 13px;
+        color: #c9171e; } }
   .formarea__input {
     margin-bottom: 5px; }
     .formarea__input__label {
       display: inline-block;
       margin: 5px 0;
-      width: 120px;
+      width: 95px;
       text-align: left; }
+      @media only screen and (max-width: 750px) {
+        .formarea__input__label {
+          display: block; } }
     .formarea__input__field {
       width: 300px; }
+      @media only screen and (max-width: 750px) {
+        .formarea__input__field {
+          width: 96%; } }
       .formarea__input__field--small {
         width: 205px; }
+        @media only screen and (max-width: 750px) {
+          .formarea__input__field--small {
+            width: 72%; } }
     .formarea__input__submit {
       padding: 6px;
       background-color: #fff;
       border: solid 1px #c9c9c9;
       vertical-align: bottom;
       width: 90px; }
+      .formarea__input__submit--regist {
+        padding: 6px;
+        background-color: #888;
+        border: solid 1px #888;
+        vertical-align: bottom;
+        width: 90px;
+        color: #fff;
+        font-size: 14px; }
+        @media only screen and (max-width: 750px) {
+          .formarea__input__submit--regist {
+            width: 20%; } }
+      .formarea__input__submit--signin {
+        padding: 6px;
+        background-color: #c1c1c1;
+        border: solid 1px #888;
+        vertical-align: bottom;
+        width: 90px;
+        color: #fff;
+        font-size: 14px; }
+        @media only screen and (max-width: 750px) {
+          .formarea__input__submit--signin {
+            width: 20%; } }
+
+::-webkit-input-placeholder {
+  color: red; }
 
 .footer {
   position: fixed;
