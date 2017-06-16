@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+.header {
+    height: 30px;
+    background: #888;
+    color: #fff;
+    padding: 8px;
+    &__toplogo {
+        font-size: 26px;
+    }
+}
+.ubody {
+    flex:1;
+}
+.formarea {
+    text-align: center;
+    background: #fefefe;
+    margin: 50px 0;
+    @include sp {
+        margin: 5%;
+        text-align: left;
+    }
+    &__err {
+        margin: 9px;
+        padding-left: 10px;
+        font-size: 13px;
+        color: #c9171e;
+           margin-left: 110px;
+        @include sp {
+            margin: 2%;
+            font-size: 13px;
+            color: #c9171e;
+        }
+
+    }
+    &__input {
+        margin-bottom: 5px;
+        &__label {
+            display: inline-block;
+            margin: 5px 0;
+            width: 95px;
+            text-align: left;
+            @include sp {
+                display: block;
+            }
+        }
+        &__field {
+            width: 300px;
+            @include sp {
+                width: 96%;
+            }
+            &--small {
+                width: 205px;
+                @include sp {
+                    width:72%;
+                }
+            }
+        }
+        &__submit {
+            padding: 6px;
+            background-color: #fff;
+            border: solid 1px #c9c9c9;
+            vertical-align: bottom;
+            width: 90px;
+            &--regist {
+                padding: 6px;
+                background-color: #888;
+                border: solid 1px #888;
+                vertical-align: bottom;
+                width: 90px;
+                color: #fff;
+                font-size: 14px;
+                @include sp {
+                    width: 20%;
+                }
+            }
+            &--signin {
+                padding: 6px;
+                background-color: #c1c1c1;
+                border: solid 1px #888;
+                vertical-align: bottom;
+                width: 90px;
+                color: #fff;
+                font-size: 14px;
+                @include sp {
+                    width:20%;
+                }
+            }
+        }
+    }
+}
+
+
+::-webkit-input-placeholder
+{
+    color: red;
+}
+.footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background: #888;
+    color: #fff;
+    padding: 8px;
+    &__copy {
+        font-size: 13px;
+        text-align: center;
+    }
+}
