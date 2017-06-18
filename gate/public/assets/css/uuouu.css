@@ -1,0 +1,28 @@
+.header {
+  height: 30px;
+  background: #888;
+  color: #fff;
+  padding: 8px; }
+  .header__toplogo {
+    font-size: 26px; }
+
+.ubody {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+
+.formarea {
+  margin: 0 auto;
+  width: 500px; }
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background: #888;
+  color: #fff;
+  padding: 8px; }
+  .footer__copy {
+    font-size: 13px;
+    text-align: center; }
