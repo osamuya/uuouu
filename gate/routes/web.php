@@ -11,9 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+//Route::get('/', function () {
+//    return view('index');
+//});
+Route::get('/', 'TopController@index');
+
+Route::match(['get', 'post'],'regist/{hash}', 'TopController@regist');
+
+
+
 
 // delevop list page
 Route::get('/list', function () {

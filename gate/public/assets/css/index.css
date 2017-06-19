@@ -169,7 +169,7 @@ input[type=number],
 select,
 textarea {
   padding: 6px;
-  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", "ヒラギノ丸ゴ Pro W4", "Hiragino Maru Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+  font-family: "Noto Sans JP", sans-serif;
   background-color: #fff;
   border: solid 1px #c9c9c9;
   vertical-align: bottom; }
@@ -247,7 +247,7 @@ input[type="button"],
 input[type="submit"] {
   -webkit-appearance: none;
   cursor: pointer;
-  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", "ヒラギノ丸ゴ Pro W4", "Hiragino Maru Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+  font-family: "Noto Sans JP", sans-serif;
   vertical-align: bottom; }
 
 textarea {
@@ -354,6 +354,9 @@ blockquote:before {
 /*parts*/
 /*elements*/
 /*page*/
+body {
+  background: #fff; }
+
 .header {
   height: 30px;
   background: #888;
@@ -368,20 +371,26 @@ blockquote:before {
   -ms-flex: 1;
   flex: 1; }
 
+.top {
+  margin: 20px; }
+  @media only screen and (max-width: 750px) {
+    .top {
+      margin: 2%; } }
+
 .formarea {
-  text-align: center;
-  background: #fefefe;
-  margin: 50px 0; }
+  margin: 0 auto;
+  width: 417px;
+  margin-top: 70px; }
   @media only screen and (max-width: 750px) {
     .formarea {
-      margin: 5%;
-      text-align: left; } }
+      margin: 0 auto;
+      width: 100%; } }
   .formarea__err {
     margin: 9px;
     padding-left: 10px;
     font-size: 13px;
     color: #c9171e;
-    margin-left: 110px; }
+    margin-left: 95px; }
     @media only screen and (max-width: 750px) {
       .formarea__err {
         margin: 2%;
@@ -435,9 +444,6 @@ blockquote:before {
         @media only screen and (max-width: 750px) {
           .formarea__input__submit--signin {
             width: 20%; } }
-
-::-webkit-input-placeholder {
-  color: red; }
 
 .footer {
   position: fixed;

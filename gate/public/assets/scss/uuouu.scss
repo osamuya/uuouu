@@ -1,5 +1,7 @@
 @charset "utf-8";
-
+body {
+    background: #fff;
+}
 .header {
     height: 30px;
     background: #888;
@@ -12,26 +14,34 @@
 .ubody {
     flex:1;
 }
-.formarea {
-    text-align: center;
-    background: #fefefe;
-    margin: 50px 0;
+.top {
+    margin: 20px;
     @include sp {
-        margin: 5%;
-        text-align: left;
+        margin: 2%;
     }
-    &__err {
+}
+
+.formarea {
+    margin: 0 auto;
+    width: 417px;
+    margin-top: 70px;
+    @include sp {
+        margin: 0 auto;
+        width: 100%;
+    }
+        &__err {
         margin: 9px;
         padding-left: 10px;
         font-size: 13px;
         color: #c9171e;
-           margin-left: 110px;
+        margin-left: 95px;
+//        display: none;
+
         @include sp {
             margin: 2%;
             font-size: 13px;
             color: #c9171e;
         }
-
     }
     &__input {
         margin-bottom: 5px;
@@ -90,11 +100,6 @@
     }
 }
 
-
-::-webkit-input-placeholder
-{
-    color: red;
-}
 .footer {
     position: fixed;
     bottom: 0px;
