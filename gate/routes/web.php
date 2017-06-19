@@ -27,3 +27,4 @@ Route::get('/list', function () {
 });
 
 Route::get('/sample', 'SampleController@index');
+Route::get('/sendmail', 'SendmailtestController@index');

@@ -169,7 +169,7 @@ input[type=number],
 select,
 textarea {
   padding: 6px;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", "ヒラギノ丸ゴ Pro W4", "Hiragino Maru Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
   background-color: #fff;
   border: solid 1px #c9c9c9;
   vertical-align: bottom; }
@@ -247,7 +247,7 @@ input[type="button"],
 input[type="submit"] {
   -webkit-appearance: none;
   cursor: pointer;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", "ヒラギノ丸ゴ Pro W4", "Hiragino Maru Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
   vertical-align: bottom; }
 
 textarea {
@@ -354,105 +354,3 @@ blockquote:before {
 /*parts*/
 /*elements*/
 /*page*/
-body {
-  background: #fff;
-  color: #555; }
-
-.header {
-  height: 30px;
-  background: #888;
-  color: #fff;
-  padding: 8px; }
-  .header__toplogo {
-    font-size: 26px; }
-
-.ubody {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1; }
-
-.top {
-  margin: 20px; }
-  @media only screen and (max-width: 750px) {
-    .top {
-      margin: 2%; } }
-
-.formarea {
-  margin: 0 auto;
-  width: 417px;
-  margin-top: 70px; }
-  @media only screen and (max-width: 750px) {
-    .formarea {
-      margin: 0 auto;
-      width: 100%; } }
-  .formarea__err {
-    margin: 9px;
-    padding-left: 10px;
-    font-size: 13px;
-    color: #c9171e;
-    margin-left: 95px; }
-    @media only screen and (max-width: 750px) {
-      .formarea__err {
-        margin: 2%;
-        font-size: 13px;
-        color: #c9171e; } }
-  .formarea__input {
-    margin-bottom: 5px; }
-    .formarea__input__label {
-      display: inline-block;
-      margin: 5px 0;
-      width: 95px;
-      text-align: left; }
-      @media only screen and (max-width: 750px) {
-        .formarea__input__label {
-          display: block; } }
-    .formarea__input__field {
-      width: 300px; }
-      @media only screen and (max-width: 750px) {
-        .formarea__input__field {
-          width: 96%; } }
-      .formarea__input__field--small {
-        width: 205px; }
-        @media only screen and (max-width: 750px) {
-          .formarea__input__field--small {
-            width: 72%; } }
-    .formarea__input__submit {
-      padding: 6px;
-      background-color: #fff;
-      border: solid 1px #c9c9c9;
-      vertical-align: bottom;
-      width: 90px; }
-      .formarea__input__submit--regist {
-        padding: 6px;
-        background-color: #888;
-        border: solid 1px #888;
-        vertical-align: bottom;
-        width: 90px;
-        color: #fff;
-        font-size: 14px; }
-        @media only screen and (max-width: 750px) {
-          .formarea__input__submit--regist {
-            width: 20%; } }
-      .formarea__input__submit--signin {
-        padding: 6px;
-        background-color: #c1c1c1;
-        border: solid 1px #888;
-        vertical-align: bottom;
-        width: 90px;
-        color: #fff;
-        font-size: 14px; }
-        @media only screen and (max-width: 750px) {
-          .formarea__input__submit--signin {
-            width: 20%; } }
-
-.footer {
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-  background: #888;
-  color: #fff;
-  padding: 8px; }
-  .footer__copy {
-    font-size: 13px;
-    text-align: center; }
