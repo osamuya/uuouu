@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+    // page to top
     var main;
     main = new PagePlugin();
     $(window).on('load',this,function(){
@@ -8,11 +10,23 @@ $(document).ready(function() {
         });
     });
 });
-// クラス定義（コンストラクタ）
+
+
+///////////////////////////////
+////// クラス定義（コンストラクタ）
+///////////////////////////////
+
+// page scroll
 PagePlugin = function(op) {
     this.speed=500;
 };
-// メソッド定義
+
+
+/////////////////////
+///////// メソッド定義
+/////////////////////
+
+// page scroll
 PagePlugin.prototype = {
     init: function(){
         var self;
@@ -30,3 +44,10 @@ PagePlugin.prototype = {
     }
 
 };
+
+
+//$(function(){
+//    $("#regist").submit(function(){
+//        alert();
+//    });
+//});
