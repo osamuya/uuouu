@@ -53,13 +53,8 @@ class TopController extends Controller
             $request->session()->forget("regist_status");
             // Redirect
             // Logging
-
-
-
-
-
-            abort("500");
-            return false;
+//            abort("500");
+            return redirect('/');
         }
 
         // save mysql database

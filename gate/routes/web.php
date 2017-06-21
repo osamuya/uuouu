@@ -30,5 +30,5 @@ Route::get('/sample', 'SampleController@index');
 Route::get('/sendmail', 'SendmailtestController@index');
 
 // Sendmail
-Route::get('/mail', 'MailController@index');
-Route::post('/send', 'MailactController@send');
+//Route::get('/mail', 'MailController@index');
+//Route::post('/send', 'MailactController@send');
