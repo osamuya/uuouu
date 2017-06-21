@@ -13,8 +13,8 @@ return [
      */
 
 //    'enabled' => env('DEBUGBAR_ENABLED', null), // デフォルト (APP_DEBUGに依存)
-//    'enabled' => env('DEBUGBAR_ENABLED', true), // 表示を強制
-    'enabled' => env('DEBUGBAR_ENABLED', false), // 非表示を強制
+    'enabled' => env('DEBUGBAR_ENABLED', true), // 表示を強制
+//    'enabled' => env('DEBUGBAR_ENABLED', false), // 非表示を強制
 
     /*
      |--------------------------------------------------------------------------

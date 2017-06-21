@@ -32,19 +32,29 @@ class TopController extends Controller
 
     public function regist(Request $request, $hash)
     {
-
+        /*
+         * Sending mail to register
+         * Save data of register
+         * Logging
+         *
+         */
         if ($request->session()->get("regist_status") == $hash) {
-             //nothing
+            //nothing
+
+
+
+
         } else {
             $request->session()->forget("regist_status");
             // Redirect
             // Logging
+
+            dd(\Config::get('mail'));
             abort("500");
             return false;
         }
 
         // save mysql database
-
         return "foo bar";
     }
 }
