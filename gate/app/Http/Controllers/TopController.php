@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Library\BaseClass;
 
-
+// Require for sendmail
+use Mail;
+use App\Mail\BaseMail;
 
 /**
  * TopController 主にサインアップ・サインインなどの認証機能
@@ -32,19 +34,35 @@ class TopController extends Controller
 
     public function regist(Request $request, $hash)
     {
-
+        /*
+         * Sending mail to register dd(\Config::get('mail'));
+         * Save data of register
+         * Logging
+         *
+         */
         if ($request->session()->get("regist_status") == $hash) {
-             //nothing
+            //nothing
+
+
+            $request->session()->forget("regist_status");
+            Mail::to('oosamuuy@gmail.com')->send(new BaseMail());
+
+
+
         } else {
             $request->session()->forget("regist_status");
             // Redirect
             // Logging
+
+
+
+
+
             abort("500");
             return false;
         }
 
         // save mysql database
-
         return "foo bar";
     }
 }
