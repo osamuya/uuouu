@@ -63,6 +63,7 @@
                 <div class="formarea__input">
                     <label class="formarea__input__label">パスワード: </label>
                     <input type="text" name="" id="" class="formarea__input__field--small">
+                    <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <input type="submit" name="" id="submit_regist" class="formarea__input__submit--regist" value="regist">
                     <div class="formarea__err">*ユーザー名を入力してください。</div>
                 </div>

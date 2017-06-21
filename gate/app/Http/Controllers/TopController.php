@@ -43,8 +43,10 @@ class TopController extends Controller
         if ($request->session()->get("regist_status") == $hash) {
             //nothing
 
-            $request = "foo bar";
+
+            $request->session()->forget("regist_status");
             Mail::to('oosamuuy@gmail.com')->send(new BaseMail());
+
 
 
         } else {
