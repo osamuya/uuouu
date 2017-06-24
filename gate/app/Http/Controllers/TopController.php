@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Library\BaseClass;
+use App\uuoUser;
+use Illuminate\Support\Facades\DB;
 
 // Require for sendmail
 use Mail;
@@ -41,20 +43,27 @@ class TopController extends Controller
          *
          */
         if ($request->session()->get("regist_status") == $hash) {
-            //nothing
 
+//            $password_hashed = BaseClass::makeEncrypt($request->input('password'));
+//            var_dump($request->input('username'));
+//            var_dump($request->input('email'));
+//            var_dump($password_hashed);
+            
+			
+			$uuoUser = new uuoUser;
+			// new user regist
+			$uuoUser->username = $request->input('username');
+			$uuoUser->password = BaseClass::makeEncrypt($request->input('password'));
+			$uuoUser->email = $request->input('email');
+			$uuoUser->uniqeid = uniqid('pre_');
+			$uuoUser->count = 1;
+			$uuoUser->delflag = 0;
+			$uuoUser->save();
 
-            $password_hashed = BaseClass::makeEncrypt($request->input('password'));
-            var_dump($request->input('username'));
-            var_dump($request->input('email'));
-            var_dump($password_hashed);
-            exit;
-
-
-
-
-
+			// session delete
             $request->session()->forget("regist_status");
+			
+			// sendmail with templete
             Mail::to('oosamuuy@gmail.com')->send(new BaseMail());
 
 

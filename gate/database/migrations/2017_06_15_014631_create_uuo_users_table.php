@@ -18,6 +18,8 @@ class CreateUuoUsersTable extends Migration
             $table->string('username', 128);
             $table->string('password', 256);
             $table->string('email');
+			$table->string('uniqeid', 64);
+			$table->integer('count');
             $table->unsignedTinyInteger('delflag');
             $table->timestamps();
         });
