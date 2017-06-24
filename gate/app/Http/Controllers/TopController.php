@@ -44,6 +44,16 @@ class TopController extends Controller
             //nothing
 
 
+            $password_hashed = BaseClass::makeEncrypt($request->input('password'));
+            var_dump($request->input('username'));
+            var_dump($request->input('email'));
+            var_dump($password_hashed);
+            exit;
+
+
+
+
+
             $request->session()->forget("regist_status");
             Mail::to('oosamuuy@gmail.com')->send(new BaseMail());
 

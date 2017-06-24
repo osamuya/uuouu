@@ -52,17 +52,17 @@
             <form action="/regist/{{$hash}}" method="" id="regist">
                 <div class="formarea__input">
                     <label class="formarea__input__label">ユーザー名: </label>
-                    <input type="text" name="" id=""  class="formarea__input__field" placeholder="User name">
+                    <input type="text" name="username" id="username"  class="formarea__input__field" placeholder="User name">
                     <div class="formarea__err">*ユーザー名を入力してください。</div>
                 </div>
                 <div class="formarea__input">
                     <label class="formarea__input__label">Eメール: </label>
-                    <input type="text" name="" id="" class="formarea__input__field" placeholder="Email">
+                    <input type="text" name="email" id="email" class="formarea__input__field" placeholder="Email">
                     <div class="formarea__err">*Emailを入力してください。</div>
                 </div>
                 <div class="formarea__input">
                     <label class="formarea__input__label">パスワード: </label>
-                    <input type="text" name="" id="" class="formarea__input__field--small">
+                    <input type="text" name="password" id="password" class="formarea__input__field--small">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <input type="submit" name="" id="submit_regist" class="formarea__input__submit--regist" value="regist">
                     <div class="formarea__err">*ユーザー名を入力してください。</div>
