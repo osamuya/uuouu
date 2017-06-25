@@ -1,0 +1,17 @@
+.//app/Http/Controllers/TopController.php:6:use App\Model\uuoUser;
+.//app/Http/Controllers/TopController.php:53:			$uuoUser = new uuoUser;
+.//app/Http/Controllers/TopController.php:55:			$uuoUser->username = $request->input('username');
+.//app/Http/Controllers/TopController.php:56:			$uuoUser->password = BaseClass::makeEncrypt($request->input('password'));
+.//app/Http/Controllers/TopController.php:57:			$uuoUser->email = $request->input('email');
+.//app/Http/Controllers/TopController.php:58:			$uuoUser->uniqeid = uniqid('pre_');
+.//app/Http/Controllers/TopController.php:59:			$uuoUser->count = 1;
+.//app/Http/Controllers/TopController.php:60:			$uuoUser->delflag = 0;
+.//app/Http/Controllers/TopController.php:61:			$uuoUser->save();
+.//app/Model/uuoUser.php:7:class uuoUser extends Model
+.//storage/logs/laravel.log:1323:[2017-06-24 18:06:29] local.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: Class 'App\Model\uuoUser' not found in /Users/osamu/localhost/uuouu/gate/app/Http/Controllers/TopController.php:54
+.//storage/logs/laravel.log:1376:[2017-06-24 18:07:57] local.ERROR: ErrorException: include(/Users/osamu/localhost/uuouu/gate/vendor/composer/../../app/Model/uuoUser.php): failed to open stream: No such file or directory in /Users/osamu/localhost/uuouu/gate/vendor/composer/ClassLoader.php:444
+.//storage/logs/laravel.log:1381:#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\uuoUser')
+.//storage/logs/laravel.log:1382:#4 /Users/osamu/localhost/uuouu/gate/app/Http/Controllers/TopController.php(55): spl_autoload_call('App\\uuoUser')
+.//storage/logs/laravel.log:1841:[2017-06-24 18:25:46] local.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: Class 'App\Model\uuoUser' not found in /Users/osamu/localhost/uuouu/gate/app/Http/Controllers/TopController.php:53
+.//vendor/composer/autoload_classmap.php:31:    'App\\uuoUser' => $baseDir . '/app/Model/uuoUser.php',
+.//vendor/composer/autoload_static.php:311:        'App\\uuoUser' => __DIR__ . '/../..' . '/app/Model/uuoUser.php',
