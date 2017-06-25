@@ -48,10 +48,8 @@ class TopController extends Controller
             var_dump($request->input('username'));
             var_dump($request->input('email'));
             var_dump($password_hashed);
-            exit;
 
-
-
+            //save
 
 
             $request->session()->forget("regist_status");
