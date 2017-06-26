@@ -48,22 +48,22 @@ class TopController extends Controller
 //            var_dump($request->input('username'));
 //            var_dump($request->input('email'));
 //            var_dump($password_hashed);
-            
-			
-			$uuoUser = new uuoUser;
-			// new user regist
-			$uuoUser->username = $request->input('username');
-			$uuoUser->password = BaseClass::makeEncrypt($request->input('password'));
-			$uuoUser->email = $request->input('email');
-			$uuoUser->uniqeid = uniqid('pre_');
-			$uuoUser->count = 1;
-			$uuoUser->delflag = 0;
-			$uuoUser->save();
 
-			// session delete
+
+            $uuoUser = new uuoUser;
+            // new user regist
+            $uuoUser->username = $request->input('username');
+            $uuoUser->password = BaseClass::makeEncrypt($request->input('password'));
+            $uuoUser->email = $request->input('email');
+            $uuoUser->uniqeid = uniqid('pre_');
+            $uuoUser->count = 1;
+            $uuoUser->delflag = 0;
+            $uuoUser->save();
+
+            // session delete
             $request->session()->forget("regist_status");
-			
-			// sendmail with templete
+
+            // sendmail with templete
             Mail::to('oosamuuy@gmail.com')->send(new BaseMail());
 
 
