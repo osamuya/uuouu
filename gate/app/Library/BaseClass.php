@@ -39,4 +39,24 @@ class BaseClass
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
         return $password_hash;
     }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Method makeDatetime
+    |--------------------------------------------------------------------------
+    | * @access public
+    | * @param STIRINGS $timestamp
+    | * @return $timestamp
+    | * @throws
+    | * @todo
+    |
+    */
+    public static function makeDatetime($timestamp=0) {
+        // If there is no parameter, return current time
+
+        // current time
+        $datetime = date('Ymd_H:i:s');
+        return $datetime;
+
+    }
 }

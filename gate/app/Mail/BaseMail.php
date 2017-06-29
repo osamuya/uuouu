@@ -41,7 +41,15 @@ class BaseMail extends Mailable
 
 
 
-        $this->request->all();
-        return $this->view('mail.sample')->subject('テストメール');
+//        echo $request->input('username');
+//        echo $request->input('username');
+//        echo $request->input('email');
+//        exit;
+        return $this->view("mail.sample")
+            ->with("username", $request->input('username'))
+            ->with("email", $request->input('email'))
+            ->with("uniqeid", $request->session()->get('uniqeid'))
+            ->with("hash", $request->session()->get('hash'))
+            ->subject("テストメール");
     }
 }

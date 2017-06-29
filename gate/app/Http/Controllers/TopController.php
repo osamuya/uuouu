@@ -25,6 +25,10 @@ use App\Mail\BaseMail;
  */
 class TopController extends Controller
 {
+
+    private $myhash;
+    private $memberid;
+
     public function index(Request $request)
     {
         $hash = BaseClass::makeAccessHash();
@@ -49,30 +53,66 @@ class TopController extends Controller
 //            var_dump($request->input('email'));
 //            var_dump($password_hashed);
 
+            /**
+             * Register in the new member DB table
+             *
+             *
+             *
+             *
+             *
+             */
+            // make uniqeid
+            $uniqeid_tmp = uniqid();
+            // (example)5-94f5-3b53-8eda
+            $uiprefix = substr($uniqeid_tmp,0,1);
+            $ui1 = substr($uniqeid_tmp,1,4);
+            $ui2 = substr($uniqeid_tmp,5,4);
+            $ui3 = substr($uniqeid_tmp,9,4);
+            $uniqeid = "000-".$uiprefix."-".$ui1."-".$ui2."-".$ui3;
 
+            // current time
+            $currenttime = BaseClass::makeDatetime();
+
+            // save
             $uuoUser = new uuoUser;
             // new user regist
             $uuoUser->username = $request->input('username');
             $uuoUser->password = BaseClass::makeEncrypt($request->input('password'));
             $uuoUser->email = $request->input('email');
-            $uuoUser->uniqeid = uniqid('pre_');
+            $uuoUser->uniqeid = $uniqeid;
             $uuoUser->count = 1;
             $uuoUser->delflag = 0;
             $uuoUser->save();
 
-            // session delete
+            /**
+             * Send the hash key to the mail template for identity verification
+             * make access URI for for Identification
+             * - hash
+             * - date
+             */
+            $request->session()->put('uniqeid', $uniqeid);
+            $request->session()->put('hash', $hash);
+            $request->session()->put('currenttime', $currenttime);
+
+            /**
+             * Sendmail with templete
+             *
+             *
+             *
+             *
+             *
+             */
+            Mail::to($request->input('email'))
+                ->bcc("oosamuuy@gmail.com")
+                ->send(new BaseMail());
+            // session delete when registing.
             $request->session()->forget("regist_status");
-
-            // sendmail with templete
-            Mail::to('oosamuuy@gmail.com')->send(new BaseMail());
-
-
 
         } else {
             $request->session()->forget("regist_status");
             // Redirect
             // Logging
-//            abort("500");
+            // abort("500");
             return redirect('/');
         }
 
