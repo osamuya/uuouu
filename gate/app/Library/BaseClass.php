@@ -55,7 +55,7 @@ class BaseClass
         // If there is no parameter, return current time
 
         // current time
-        $datetime = date('Ymd_H:i:s');
+        $datetime = date('Ymd_His');
         return $datetime;
 
     }
