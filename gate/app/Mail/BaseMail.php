@@ -30,7 +30,7 @@ class BaseMail extends Mailable
      *
      * @return $this
      */
-    public function build()
+    public function build(Request $request)
     {
 //        return $this->view('mail.contact')
 //                    ->subject('お問い合わせ')
@@ -38,6 +38,10 @@ class BaseMail extends Mailable
 //                        'contact_name' => $this->request->name,
 //                        'contact_message' => $this->request->message
 //                    ]);
+
+
+
+        $this->request->all();
         return $this->view('mail.sample')->subject('テストメール');
     }
 }
