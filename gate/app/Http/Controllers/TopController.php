@@ -62,13 +62,7 @@ class TopController extends Controller
              *
              */
             // make uniqeid
-            $uniqeid_tmp = uniqid();
-            // (example)5-94f5-3b53-8eda
-            $uiprefix = substr($uniqeid_tmp,0,1);
-            $ui1 = substr($uniqeid_tmp,1,4);
-            $ui2 = substr($uniqeid_tmp,5,4);
-            $ui3 = substr($uniqeid_tmp,9,4);
-            $uniqeid = "000-".$uiprefix."-".$ui1."-".$ui2."-".$ui3;
+            $uniqeid = BaseClass::makeUniqeid();
 
             // current time
             $currenttime = BaseClass::makeDatetime();
@@ -93,6 +87,9 @@ class TopController extends Controller
             $request->session()->put('uniqeid', $uniqeid);
             $request->session()->put('hash', $hash);
             $request->session()->put('currenttime', $currenttime);
+
+            $query = env("APP_URL")."mode=newregist&id=".$uniqeid."&hash=".$hash."datetime=".$currenttime."&flag=1";
+            $request->session()->put('query', $query);
 
             /**
              * Sendmail with templete
