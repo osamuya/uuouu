@@ -39,4 +39,56 @@ class BaseClass
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
         return $password_hash;
     }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Method makeDatetime
+    |--------------------------------------------------------------------------
+    | * @access public
+    | * @param STIRINGS $timestamp
+    | * @return $timestamp
+    | * @throws
+    | * @todo
+    |
+    */
+    public static function makeDatetime($timestamp=0) {
+        // If there is no parameter, return current time
+
+        // current time
+        $datetime = date('Ymd_His');
+        return $datetime;
+
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Method makeUniqeid
+    |--------------------------------------------------------------------------
+    | make uniqeid
+    | * @access public
+    | * @param STIRINGS $timestamp
+    | * @return $timestamp
+    | * @throws
+    | * @todo
+    |
+    */
+    public static function makeUniqeid() {
+
+        $uniqeid_tmp = uniqid();
+        // (example)5-94f5-3b53-8eda
+        $uiprefix = substr($uniqeid_tmp,0,1);
+        $ui1 = substr($uniqeid_tmp,1,4);
+        $ui2 = substr($uniqeid_tmp,5,4);
+        $ui3 = substr($uniqeid_tmp,9,4);
+        $uniqeid = "000-".$uiprefix."-".$ui1."-".$ui2."-".$ui3;
+
+        return $uniqeid;
+    }
+
+
+
+
+
+
+
 }

@@ -49,7 +49,7 @@
 
     <article class="top">
         <div class="signup formarea">
-            <form action="/regist/{{$hash}}" method="" id="regist">
+            <form action="/regist/{{$hash}}" method="post" id="regist">
                 <div class="formarea__input">
                     <label class="formarea__input__label">ユーザー名: </label>
                     <input type="text" name="username" id="username"  class="formarea__input__field" placeholder="User name">
@@ -70,7 +70,7 @@
             </form>
         </div><!--// formarea -->
         <div class="signin formarea">
-            <form action="" method="" id="signin">
+            <form action="" method="post" id="signin">
                 <div class="formarea__input">
                     <label class="formarea__input__label">ユーザー名: </label>
                     <input type="text" name="" id="" class="formarea__input__field" placeholder="User name or Email">
