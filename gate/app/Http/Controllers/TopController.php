@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Library\BaseClass;
-use App\uuoUser;
+use App\Model\uuoUser;
 use Illuminate\Support\Facades\DB;
 
 // Require for sendmail
@@ -49,7 +49,7 @@ class TopController extends Controller
         if ($request->session()->get("regist_status") == $hash) {
 
 //            $password_hashed = BaseClass::makeEncrypt($request->input('password'));
-//            var_dump($request->input('username'));
+//            var_dump($request->input('name'));
 //            var_dump($request->input('email'));
 //            var_dump($password_hashed);
 
@@ -70,7 +70,7 @@ class TopController extends Controller
             // save
             $uuoUser = new uuoUser;
             // new user regist
-            $uuoUser->username = $request->input('username');
+            $uuoUser->name = $request->input('name');
             $uuoUser->password = BaseClass::makeEncrypt($request->input('password'));
             $uuoUser->email = $request->input('email');
             $uuoUser->uniqeid = $uniqeid;

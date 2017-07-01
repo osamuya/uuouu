@@ -15,10 +15,11 @@ class CreateUuoUsersTable extends Migration
     {
         Schema::create('uuo_users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('username', 128);
+            $table->string('name', 128);
             $table->string('password', 256);
             $table->string('email');
 			$table->string('uniqeid', 64);
+			$table->rememberToken();
 			$table->integer('count');
             $table->unsignedTinyInteger('delflag');
             $table->timestamps();

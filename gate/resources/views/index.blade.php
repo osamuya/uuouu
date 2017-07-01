@@ -52,7 +52,7 @@
             <form action="/regist/{{$hash}}" method="post" id="regist">
                 <div class="formarea__input">
                     <label class="formarea__input__label">ユーザー名: </label>
-                    <input type="text" name="username" id="username"  class="formarea__input__field" placeholder="User name">
+                    <input type="text" name="name" id="name"  class="formarea__input__field" placeholder="User name">
                     <div class="formarea__err">*ユーザー名を入力してください。</div>
                 </div>
                 <div class="formarea__input">
