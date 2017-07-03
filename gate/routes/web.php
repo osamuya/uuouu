@@ -32,3 +32,7 @@ Route::get('/sendmail', 'SendmailtestController@index');
 // Sendmail
 //Route::get('/mail', 'MailController@index');
 //Route::post('/send', 'MailactController@send');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
