@@ -15,7 +15,8 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+//        'passwords' => 'users',
+		'passwords' => 'uuouser',
     ],
 
     /*
@@ -38,12 +39,14 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+//            'provider' => 'users',
+			'passwords' => 'uuouser',
         ],
 
         'api' => [
             'driver' => 'token',
-            'provider' => 'users',
+//            'provider' => 'users',
+			'passwords' => 'uuouser',
         ],
     ],
 
@@ -94,7 +97,8 @@ return [
 
     'passwords' => [
         'users' => [
-            'provider' => 'users',
+//            'provider' => 'users',
+			'provider' => 'uuouser',
             'table' => 'password_resets',
             'expire' => 60,
         ],
