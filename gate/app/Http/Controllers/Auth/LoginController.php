@@ -36,4 +36,16 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    /**
+     * デフォルトでLaravelはemailフィールドを認証に利用します。
+     * これをカスタマイズしたい場合は、
+     * LoginControllerでusernameメソッドを定義してください。
+     *
+     * @var string
+     */
+//    public function username()
+//    {
+//        return 'username';
+//    }
 }

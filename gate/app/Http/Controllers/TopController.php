@@ -3,12 +3,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Library\BaseClass;
+
+// DB
 use App\Model\uuoUser;
 use Illuminate\Support\Facades\DB;
 
 // Require for sendmail
 use Mail;
 use App\Mail\BaseMail;
+
+// Aunth and something
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 /**
  * TopController 主にサインアップ・サインインなどの認証機能
@@ -25,9 +31,24 @@ use App\Mail\BaseMail;
  */
 class TopController extends Controller
 {
+    use RegistersUsers;
+
 
     private $myhash;
     private $memberid;
+
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+//    public function __construct()
+//    {
+//        $this->middleware('guest');
+//    }
+
+
 
     public function index(Request $request)
     {
@@ -78,6 +99,10 @@ class TopController extends Controller
             $uuoUser->delflag = 0;
             $uuoUser->save();
 
+            // auth test
+//            $test_array = array('name' => 'foo', 'email' => 'email', 'password'=>'moo');
+//            $this->create($test_array);
+
             /**
              * Send the hash key to the mail template for identity verification
              * make access URI for for Identification
@@ -115,5 +140,16 @@ class TopController extends Controller
 
         // save mysql database
         return "foo bar";
+    }
+
+
+
+    protected function create(array $data)
+    {
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+        ]);
     }
 }
