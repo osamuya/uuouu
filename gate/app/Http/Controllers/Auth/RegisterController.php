@@ -62,14 +62,31 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        $data['uniqeid'] = "uniqeid";
+        $data['count'] = 1;
+        $data['active'] = 1;
+        $data['role'] = 1;
+        $data['delflag'] = 0;
         var_dump($data);
-        exit("foo 1");
+        echo "foo[2]";
+        echo "<br>";
+//        exit("foo[2]");
+
+
+
 
 
         return User::create([
+            'uniqeid' => $data['uniqeid'],
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'remember_token' => "",
+            'count' => $data['count'],
+            'active' => $data['active'],
+            'role' => $data['role'],
+            'delflag' => $data['delflag'],
         ]);
     }
 }
