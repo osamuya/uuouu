@@ -8,15 +8,22 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
-	
-//	protected $table = 'uuoUser';
+
+    /**
+     * モデルと関連しているテーブル
+     *
+     * @var string
+     */
+    protected $table = 'uuo_users';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+//        'name', 'email', 'password',
+        'uniqeid','name','email','password','count','active','role','delflag',
     ];
 
     /**

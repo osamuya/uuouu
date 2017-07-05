@@ -30,6 +30,13 @@ class RegisterController extends Controller
     protected $redirectTo = '/home';
 
     /**
+     * Where to redirect users after temporary registration.
+     *
+     * @var string
+     */
+    protected $redirectToStored = '/stored';
+
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -62,8 +69,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        
-
+        $data['uniqeid'] = "uniqeid";
+        $data['count'] = 1;
+        $data['active'] = 1;
+        $data['role'] = 1;
+        $data['delflag'] = 0;
 
 		$data['uniqeid'] = 'bar';
 		
@@ -71,10 +81,30 @@ class RegisterController extends Controller
 //        exit("foo 1");
 		
         return User::create([
-			'uniqeid' => $data['uniqeid'],
+            'uniqeid' => $data['uniqeid'],
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+//            'remember_token' => "",
+            'count' => $data['count'],
+            'active' => $data['active'],
+            'role' => $data['role'],
+            'delflag' => $data['delflag'],
         ]);
+    }
+
+
+    /**
+     * Create a new user instance after a valid registration.
+     *
+     * @param  $stored hash
+     * @return voide
+     */
+    protected function stored() {
+
+
+
+        return view('auth.stored');
+
     }
 }

@@ -9,14 +9,20 @@ use Illuminate\Database\Eloquent\Model;
 class uuoUser extends Model
 {
     use Notifiable;
-    
+    /**
+     * モデルと関連しているテーブル
+     *
+     * @var string
+     */
+    protected $table = 'uuo_users';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        // 'name', 'email', 'password',
+        'uniqeid','name','email','password','count','active','role','delflag',
     ];
 
     /**
