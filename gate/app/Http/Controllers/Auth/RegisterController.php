@@ -30,6 +30,13 @@ class RegisterController extends Controller
     protected $redirectTo = '/home';
 
     /**
+     * Where to redirect users after temporary registration.
+     *
+     * @var string
+     */
+    protected $redirectToStored = '/stored';
+
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -80,5 +87,20 @@ class RegisterController extends Controller
             'role' => $data['role'],
             'delflag' => $data['delflag'],
         ]);
+    }
+
+
+    /**
+     * Create a new user instance after a valid registration.
+     *
+     * @param  $stored hash
+     * @return voide
+     */
+    protected function stored() {
+
+
+
+        return view('auth.stored');
+
     }
 }
