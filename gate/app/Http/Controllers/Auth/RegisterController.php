@@ -68,14 +68,6 @@ class RegisterController extends Controller
         $data['active'] = 1;
         $data['role'] = 1;
         $data['delflag'] = 0;
-        var_dump($data);
-        echo "foo[2]";
-        echo "<br>";
-//        exit("foo[2]");
-
-
-
-
 
         return User::create([
             'uniqeid' => $data['uniqeid'],

@@ -9,6 +9,13 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+
+    /**
+     * モデルと関連しているテーブル
+     *
+     * @var string
+     */
+    protected $table = 'uuo_users';
     /**
      * The attributes that are mass assignable.
      *
