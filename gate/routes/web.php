@@ -34,10 +34,5 @@ Route::get('/sendmail', 'SendmailtestController@index');
 //Route::post('/send', 'MailactController@send');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 Route::match(['get', 'post'],'stored/', 'Auth\RegisterController@stored');

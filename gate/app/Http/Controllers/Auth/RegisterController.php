@@ -69,6 +69,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        
+		$this->register();
+		
+		
+		
         $data['uniqeid'] = "uniqeid";
         $data['count'] = 1;
         $data['active'] = 1;
@@ -78,7 +83,11 @@ class RegisterController extends Controller
 		$data['uniqeid'] = 'bar';
 		
 		var_dump($data);
-//        exit("foo 1");
+        exit("foo 1");
+		
+		
+		
+		
 		
         return User::create([
             'uniqeid' => $data['uniqeid'],
@@ -102,9 +111,21 @@ class RegisterController extends Controller
      */
     protected function stored() {
 
-
-
         return view('auth.stored');
 
+    }
+	
+	/**
+     * Regisuser (over raid Illuminate\Foundation\Auth\RegistersUsers)
+     *
+     * @param  array  $data
+     * @return User
+     */
+	public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+        return $this->redirectToStored;
     }
 }
