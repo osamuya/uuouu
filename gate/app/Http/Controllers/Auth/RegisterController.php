@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
@@ -70,7 +72,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         
-		$this->register();
+//		$this->register();
 		
 		
 		
@@ -81,16 +83,22 @@ class RegisterController extends Controller
         $data['delflag'] = 0;
 
 		$data['uniqeid'] = 'bar';
-		
-		var_dump($data);
-        exit("foo 1");
-		
-		
+		$data['uniqehash'] = 'xxxxxxxxxxxxxxxxxxx';
+//		var_dump($data);
+//        exit("foo 1");
 		
 		
 		
+		
+		/**
+		 * フィールドの追加は、このreturnの部分とmodelにカラム追加します。
+		 *
+		 *
+		 *
+		*/
         return User::create([
             'uniqeid' => $data['uniqeid'],
+			'uniqehash' => $data['uniqehash'],
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),

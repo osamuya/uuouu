@@ -19,6 +19,7 @@ class CreateUuoUsersTable extends Migration
             $table->string('password', 256);
             $table->string('email');
             $table->string('uniqeid', 64);
+			$table->string('uniqehash', 64);
             $table->rememberToken();
             $table->integer('count');
             $table->integer('active');

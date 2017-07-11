@@ -13,3 +13,5 @@ gate/.env
 gate/storage/framework/views/*
 #me
 .para/
+uuouu.local_log
+uuouu.local-error_log
