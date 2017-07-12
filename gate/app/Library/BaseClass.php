@@ -72,7 +72,7 @@ class BaseClass
     | * @todo
     |
     */
-    public static function makeUniqeid() {
+    public static function makeUniqeid($oiprefix="000") {
 
         $uniqeid_tmp = uniqid();
         // (example)5-94f5-3b53-8eda
@@ -80,7 +80,7 @@ class BaseClass
         $ui1 = substr($uniqeid_tmp,1,4);
         $ui2 = substr($uniqeid_tmp,5,4);
         $ui3 = substr($uniqeid_tmp,9,4);
-        $uniqeid = "000-".$uiprefix."-".$ui1."-".$ui2."-".$ui3;
+        $uniqeid = $oiprefix."-".$uiprefix."-".$ui1."-".$ui2."-".$ui3;
 
         return $uniqeid;
     }

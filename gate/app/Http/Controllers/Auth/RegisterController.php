@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Auth\Events\Registered;
+use App\Library\BaseClass;
+
 
 class RegisterController extends Controller
 {
@@ -76,7 +78,7 @@ class RegisterController extends Controller
 		
 		
 		
-        $data['uniqeid'] = "uniqeid";
+        $data['uniqeid'] = BaseClass::makeUniqeid();
         $data['count'] = 1;
         $data['active'] = 1;
         $data['role'] = 1;
