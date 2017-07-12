@@ -84,8 +84,7 @@ class RegisterController extends Controller
         $data['role'] = 1;
         $data['delflag'] = 0;
 
-		$data['uniqeid'] = 'bar';
-		$data['uniqehash'] = 'xxxxxxxxxxxxxxxxxxx';
+		$data['uniqehash'] = BaseClass::makeAccessHash();
 //		var_dump($data);
 //        exit("foo 1");
 		

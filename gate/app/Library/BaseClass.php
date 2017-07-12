@@ -13,11 +13,10 @@ class BaseClass
     | Method makeAccessHash
     |--------------------------------------------------------------------------
     | make normal hash for anyway to use without password hash.
+	| example: cc0f609b88b6d12f2d52d6a7873a5611228e610e
     | * @access public
     | * @param nothing
     | * @return $string
-    | * @throws
-    | * @todo
     */
     public static function makeAccessHash() {
         $access_hash = sha1(mt_rand(00000000,99999999));
