@@ -52,7 +52,7 @@
 <article class="top">
     <div class="signup formarea">
 	
-	<form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}" id="regist">
+	<form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}" id="regist" novalidate>
 		{{ csrf_field() }}
 		
 		
