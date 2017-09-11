@@ -4,3 +4,7 @@
 	<li><a href="/sendmail" target="_blank">sendmail</a></li>
 	<li><a href="/home" target="_blank">home (Auth)</a></li>
 </ul>
+
+<ul>
+	<li><a href="/signin" target="_blank">サインイン（作りかけ）</a></li>
+</ul>

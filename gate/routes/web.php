@@ -33,3 +33,6 @@ Route::get('/sendmail', 'SendmailtestController@index');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::match(['get', 'post'],'stored/', 'Auth\RegisterController@stored');
+
+//oroginal sigin in (register) & login
+Route::get('/signin', 'UAuth\SigninController@index');
